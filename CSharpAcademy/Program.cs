@@ -262,6 +262,8 @@ int firstDigit = (int)(gradePointAverage * 10) % 10;
 //int firstDigit = 9;
 int secondDigit = (int)(gradePointAverage * 100) % 10;
 
+Random rand = new Random();
+
 
 Console.WriteLine($"Student: {studentName}\n");
 Console.WriteLine("Course\t\t\t\tGrade\tCredit Hours");
