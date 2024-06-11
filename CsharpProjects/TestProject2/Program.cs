@@ -133,7 +133,7 @@ else
  */
 
 
-/* int[] numbers = {4,8,15,16,23,42};
+/*  int[] numbers = {4,8,15,16,23,42}; 
 
 int total = 0;
 bool found = false;
@@ -1707,7 +1707,7 @@ string WinOrLose(int target, int roll){
         return "You Lose!";
 } */
 
-using System;
+/*
 
 string[] pettingZoo =
 {
@@ -1715,7 +1715,7 @@ string[] pettingZoo =
     "goats", "iguanas", "kangaroos", "lemurs", "llamas", "macaws",
     "ostriches", "pigs", "ponies", "rabbits", "sheep", "tortoises",
 };
-
+ */
 /* Design Specs for petting zoo
 - There will be three visiting schools
     - School A has six visiting groups (the default number)
@@ -1731,7 +1731,7 @@ string[] pettingZoo =
 
 // Petting zoo pseudocode
 
-PlanSchoolVisit("School A");
+/* PlanSchoolVisit("School A");
 PlanSchoolVisit("School B", 3);
 PlanSchoolVisit("School C", 2);
 
@@ -1797,10 +1797,453 @@ void PrintGroup(string[,] group)
         }
         System.Console.WriteLine();
     }
-}
+} */
 
 // used  to test
 //foreach (string animal in pettingZoo)
 //{
 //    System.Console.WriteLine(animal);
 //}
+
+/*
+This code uses a names array and corresponding methods to display greeting messages
+*/
+
+/* string[] names = new string[] {"Sophia", "Andrew", "AllGreetings"};
+string messageText = "";
+
+foreach (string name in names)
+{
+    if (name == "Sophia")
+        messageText = SophiaMessage();
+    else if (name == "Andrew")
+        messageText = AndrewMessage();
+    else if (name == "AllGreetings")
+        messageText = SophiaMessage() + "\n\r" + AndrewMessage();
+
+    System.Console.WriteLine(messageText + "\n\r");
+}
+
+bool pauseCode = true;
+while (pauseCode == true);
+
+static string SophiaMessage()
+{
+    return "Hello, my name is Sophia.";
+}
+
+static string AndrewMessage()
+{
+    return "Hi, my name is Andrew. Good to meet you.";
+}
+ */
+
+/* int productCount = 2000;
+string[,] products = new string[productCount, 2];
+
+// # debugger practice
+LoadProducts(products, productCount);
+
+for (int i = 0; i < productCount; i++)
+{
+    string result;
+    result = Process1(products, i);
+
+    if (result != "obsolete")
+    {
+        result = Process2(products, i);
+    }
+}
+
+bool pauseCode = true;
+while (pauseCode == true);
+
+static void LoadProducts(string[,] products, int productCount)
+{
+    Random rand = new Random();
+
+    for (int i = 0; i < productCount; i++)
+    {
+        int num1 = rand.Next(1,10000) + 10000;
+        int num2 = rand.Next(1,101);
+
+        string prodID = num1.ToString();
+
+        if (num2 < 91)
+        {
+            products[i,1] = "existing";
+        }
+        else if (num2 == 91)
+        {
+            products[i,1] = "new";
+            prodID = prodID + "-n";
+        }
+        else 
+        {
+            products[i,1] = "obsolete";
+            prodID = prodID + "-0";
+        }
+
+        products[i,0] = prodID;
+
+    }
+}
+
+static string Process1(string[,] products, int item)
+{
+    System.Console.WriteLine($"Process1 message - working on {products[item,1]} product");
+
+    return products[item,1];
+}
+
+static string Process2(string[,] products, int item)
+{
+    System.Console.WriteLine($"Process2 message - working on product ID #: {products[item,0]}");
+    if (products[item,1] == "new")
+        Process3(products, item);
+
+    return "continue";
+}
+
+static void Process3(string[,] products, int item)
+{
+    System.Console.WriteLine($"Process3 message - processing product information for 'new' product");
+} */
+
+/* string? readResult;
+int startIndex = 0;
+bool goodEntry = false;
+
+int[] numbers = {1,2,3,4,5};
+
+// display the array to the console.
+Console.Clear();
+Console.Write("\n\rThe 'numbers' array contains: {");
+foreach(int number in numbers)
+{
+    System.Console.Write($"{number} ");
+}
+
+// sum the array elements starting with the user's starting element number
+System.Console.WriteLine($"}}\n\r\n\rTo sum values 'n' through 5, enter a value for 'n':");
+while (goodEntry == false)
+{
+    readResult = Console.ReadLine();
+    goodEntry = int.TryParse(readResult, out startIndex);
+
+    if (startIndex > 5)
+    {
+        goodEntry = false;
+        System.Console.WriteLine("\n\rEnter an integer value between 1 and 5");
+    }
+}
+
+// display the sum and then pause
+System.Console.WriteLine($"\n\rThe sum of numbers {startIndex} through {numbers.Length} is: {SumValues(numbers, startIndex-1)}");
+
+System.Console.WriteLine("press enter to exit");
+readResult = Console.ReadLine();
+
+// this method returns the sum of elements n thr 5
+static int SumValues(int[] numbers, int n)
+{
+    int sum = 0;
+    for (int i = n; i < numbers.Length; i++)
+    {
+        sum += numbers[i];
+    }
+    return sum;
+} */
+
+/* bool exit = false;
+var rand = new Random();
+int num1 = 5;
+int num2 = 5;
+
+do
+{
+    num1 = rand.Next(1,11);
+    num2 = num1 + rand.Next(1,51);
+} while (exit == false); */
+
+// debugger challenge
+// code should update the value of x then print the updated value but does not
+/* int x = 5;
+
+x = ChangeValue(x);
+
+System.Console.WriteLine(x);
+var read = Console.ReadLine();
+
+int ChangeValue(int value)
+{
+    value = 10;
+    return value;
+} */
+
+// Common exceptions Compiler-generated exceptions
+
+// ArrayTypeMismatchException 
+// storing an element type that does not belong to the array's type
+/* string[] names = {"Dog", "Cat", "Fish"};
+Object[] objs = (Object[])names;
+
+Object obj = (Object)13;
+objs[2] = obj; */
+
+// DivideByZeroException
+/* int number1 = 3000;
+int number2 = 0;
+System.Console.WriteLine(number1/ number2); */
+
+// FormatException
+// can occuring when converting from one datatype to another
+/* int valueEntered;
+string userValue = "two";
+valueEntered = int.Parse(userValue); */
+
+// IndexOutOfRangeException
+/* int[] values1 = { 3, 6, 9, 12, 15, 18, 21 };
+int[] values2 = new int[6];
+
+values2[values1.Length - 1] = values1[values1.Length - 1]; // IndexOutOfRangeException occurs */
+
+// InvalidCastException
+// An exception of type InvalidCastException is thrown when attempting an invalid casting or explicit conversion
+
+/* object obj = "This is a string";
+int num = (int)obj; */
+
+// NullReferenceException
+/* int[] values = null;
+for (int i = 0; i <= 9; i++)
+    values[i] = i * 2; */
+
+/* string? lowCaseString = null;
+Console.WriteLine(lowCaseString.ToUpper()); */
+
+// OverflowException
+// assign a value outside the range of the target data type
+/* decimal x = 400;
+byte i;
+
+i = (byte)x; // overflowexception occurs
+System.Console.WriteLine(i); */
+
+/* double float1 = 3000.0;
+double float2 = 0.0;
+int number1 = 3000;
+int number2 = 0;
+
+try
+{
+    System.Console.WriteLine(float1 / float2);
+    System.Console.WriteLine(number1 / number2);
+} 
+catch 
+{
+    System.Console.WriteLine("An exception has been caught");
+}
+
+System.Console.WriteLine("Exit Program"); */
+
+/* try
+{
+    Process1();
+}
+catch
+{
+    System.Console.WriteLine("An exception has occurred");
+}
+
+static void Process1()
+{
+    WriteMessage();
+}
+
+static void WriteMessage()
+{
+    double float1 = 3000.0;
+    double float2 = 0.0;
+    int number1 = 3000;
+    int number2 = 0;
+
+    System.Console.WriteLine(float1 / float2);
+    System.Console.WriteLine(number1 / number2);
+} */
+
+/* try
+{
+    Process1();
+}
+catch
+{
+    System.Console.WriteLine("An exception has occurred");
+}
+
+System.Console.WriteLine("Exit Program");
+
+static void Process1()
+{
+    try 
+    {
+        WriteMessage();
+    } 
+    catch (DivideByZeroException ex)
+    {
+        System.Console.WriteLine($"Exception caught in Process1: {ex.Message}");
+    }
+    
+}
+
+static void WriteMessage()
+{
+    double float1 = 3000.0;
+    double float2 = 0.0;
+    int number1 = 3000;
+    int number2 = 0;
+    byte smallNumber;
+
+    try 
+    {
+        System.Console.WriteLine(float1 / float2);
+        System.Console.WriteLine(number1 / number2);
+    } 
+    catch (Exception ex)
+    {
+        System.Console.WriteLine("Caught in writemessage");
+    }
+    
+
+    // checked will ensure that converting from one data type to another integral data type only successed if the source value
+    // is within the range of the destination type. otherwise so bits would be lost in the uncheckted context, but it would succeed but still lose data.
+    checked
+    {
+        smallNumber = (byte)number1;
+    }
+    
+
+} */
+
+// continue from Catch multiple exceptions in a code block
+// https://learn.microsoft.com/en-us/training/modules/implement-exception-handling-c-sharp/7-exercise-catch-explicit-exception-types
+
+// catch separate exceptions
+// inputValues is used to store numeric values entered by a user
+/* string[] inputValues = new string[] {"three", "9999999999", "0", "2"};
+foreach (string inputValue in inputValues)
+{
+    int numValue = 0;
+    try
+    {
+        numValue = int.Parse(inputValue);
+    }
+    catch (FormatException)
+    {
+        System.Console.WriteLine("Invalid readResult. Please enter a valid number.");
+    }
+    catch (OverflowException)
+    {
+        System.Console.WriteLine("The number you entered is too large or too small.");
+    }
+    catch (Exception ex)
+    {
+        System.Console.WriteLine(ex.Message);
+    }
+} */
+
+/* checked
+{
+    try
+    {
+        int num1 = int.MaxValue;
+        int num2 = int.MaxValue;
+        DateTime now = DateTime.Now;
+        now.ToString(:"yyy")
+        int result = num1 + num2;
+        System.Console.WriteLine("Result: " + result);
+
+        if (num1 != num2)
+        
+    }
+    catch (OverflowException ex)
+    {
+        throw ex;
+        System.Console.WriteLine("Error: the number is too large to be represented as an integer. " + ex.Message);
+    }
+}
+
+
+try
+{
+    string? str = null;
+    int length = str.Length;
+    System.Console.WriteLine("String Length: " + length);
+}
+catch (NullReferenceException ex)
+{
+    System.Console.WriteLine("Error: the reference is null. " + ex.Message);
+}
+
+try
+{
+    int[] numbers = new int[5];
+    numbers[5] = 10;
+    System.Console.WriteLine("Number at index 5: " + numbers[5]);
+}
+catch (IndexOutOfRangeException ex)
+{
+    System.Console.WriteLine("Error: Index out of range. " + ex.Message);
+}
+
+
+try
+{
+    int num3 = 10;
+    int num4 = 0;
+    int result2 = num3 / num4;
+    System.Console.WriteLine("Result: " + result2);
+}
+
+catch (DivideByZeroException ex)
+{
+    throw;
+    System.Console.WriteLine("Error: Cannot divide by zero. " + ex.Message);
+}
+
+System.Console.WriteLine("Exiting Program");
+
+int[] array = new int[3];
+array.Len
+double employeeLevel = 100.00;
+switch (employeeLevel) 
+{
+    case 100d:
+    case 200d:
+        title = "Senior Associate";
+        break;
+    case 300d:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
+
+} */
+
+Console.BackgroundColor = ConsoleColor.Yellow;
+Console.ForegroundColor = ConsoleColor.Red;
+
+Console.Title = "Brother";
+
+System.Console.WriteLine("Hello Vedal");
+var wait = Console.ReadLine();
+
+Console.Beep();
+
+var wait2 = Console.ReadLine();
+
+Console.Beep(440,1000);
