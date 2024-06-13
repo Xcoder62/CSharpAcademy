@@ -10,7 +10,7 @@ namespace TheTicTacToeGame
     public class Player
     {
         public string PlayerName { get; set; }
-        public string PlayerChoice { get; set; }
+        public int PlayerChoice { get; set; }
 
         public Player(string playerName)
         {
@@ -19,19 +19,21 @@ namespace TheTicTacToeGame
 
         public void MakeChoice()
         {
-            System.Console.WriteLine("What Square do you want to play in?");
+            System.Console.WriteLine("What square do you want to play in?");
             bool validSelection = false;
+            int choice = -1;
             while (!validSelection)
             {
                 string? readResult = Console.ReadLine();
-                if (int.TryParse(readResult, out int choice))
+                if (int.TryParse(readResult, out choice))
                 {
                     if (choice < 1 || choice > 9)
                     {
                         System.Console.WriteLine("Please Enter a number within the numpad range (1-9)");
                     } else
                     {
-                        System.Console.WriteLine("TODO - valid number selected, return number and have the GAME ask if this is a valid space");
+                        PlayerChoice = choice;
+                        validSelection = true;
                     }
                 } 
                 
@@ -43,6 +45,8 @@ namespace TheTicTacToeGame
 
                 
             }
+
+            
 
         }
 
